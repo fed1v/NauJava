@@ -4,7 +4,7 @@ import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public class Task1 {
-    public static void main(String[] args) {
+    public void run() {
         int n = new Scanner(System.in).nextInt();
 
         int[] array = getRandomArray(n);
@@ -15,11 +15,11 @@ public class Task1 {
         System.out.println(max);
     }
 
-    private static int[] getRandomArray(int n) {
+    private int[] getRandomArray(int n) {
         return IntStream.generate(() -> new Random().nextInt()).limit(n).toArray();
     }
 
-    private static int getMaxByAbs(int[] array) {
+    private int getMaxByAbs(int[] array) {
         if (array == null || array.length == 0) {
             throw new IllegalArgumentException("Array must be not empty");
         }

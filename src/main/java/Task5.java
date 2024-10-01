@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Task5 {
-    public static void main(String[] args) {
+    public void run() {
         int timeSeconds = new Scanner(System.in).nextInt();
 
         Timer timer = new Timer(timeSeconds);

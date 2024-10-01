@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 public class Task4 {
-    public static void main(String[] args) {
+    public void run() {
 
         HttpClient client = HttpClient.newHttpClient();
 

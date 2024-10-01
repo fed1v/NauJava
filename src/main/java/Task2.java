@@ -3,7 +3,7 @@ import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 
 public class Task2 {
-    public static void main(String[] args) {
+    public void run() {
         int n = new Scanner(System.in).nextInt();
         List<Double> randomList = getRandomList(n);
 
@@ -12,11 +12,11 @@ public class Task2 {
         System.out.println(Arrays.toString(randomList.toArray()));
     }
 
-    public static void sort(List<Double> list) {
+    public void sort(List<Double> list) {
         mergeSort(list, list.size());
     }
 
-    private static void mergeSort(List<Double> a, int n) {
+    private void mergeSort(List<Double> a, int n) {
         if (n < 2) {
             return;
         }
@@ -38,7 +38,7 @@ public class Task2 {
         merge(a, l, r, mid, n - mid);
     }
 
-    private static void merge(List<Double> a, List<Double> l, List<Double> r, int left, int right) {
+    private void merge(List<Double> a, List<Double> l, List<Double> r, int left, int right) {
         int i = 0, j = 0, k = 0;
 
         while (i < left && j < right) {
@@ -56,7 +56,7 @@ public class Task2 {
         }
     }
 
-    private static List<Double> getRandomList(int n) {
+    private List<Double> getRandomList(int n) {
         return DoubleStream
                 .generate(() -> new Random().nextDouble())
                 .limit(n)

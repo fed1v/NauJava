@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Task3 {
-    private static final ArrayList<Employee> employeesExample = new ArrayList<>(
+    private final ArrayList<Employee> employeesExample = new ArrayList<>(
             List.of(
                     new Employee("Иван", 45, "Завод", 15_000.0),
                     new Employee("Сергей", 27, "Разработка", 200_000.0),
@@ -12,14 +12,14 @@ public class Task3 {
             )
     );
 
-    public static void main(String[] args) {
+    public void run() {
         int age = 30;
         List<Employee> filteredEmployees = filterEmployeesByAge(employeesExample, age);
         
         filteredEmployees.forEach(System.out::println);
     }
 
-    public static List<Employee> filterEmployeesByAge(List<Employee> employees, int age) {
+    public List<Employee> filterEmployeesByAge(List<Employee> employees, int age) {
         return employees
                 .stream()
                 .filter(employee -> employee.getAge() > age)
